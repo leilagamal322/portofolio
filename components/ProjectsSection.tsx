@@ -5,6 +5,33 @@ import { useRef, useState } from "react";
 
 const PROJECTS = [
   {
+    id: "thndr",
+    title: "THNDR",
+    subtitle: "Game Designer & Developer · In Progress",
+    client: "Thndr",
+    category: "GAME",
+    rarity: "LEGENDARY",
+    icon: "📈",
+    color: "#22c55e",
+    description:
+      "Currently building a new game for Thndr — designing gameplay systems, player experience, and development from the ground up.",
+    tags: ["Game Design", "In Progress", "Mobile", "Unity"],
+    highlight: true,
+  },
+  {
+    id: "gamebank",
+    title: "GAME BANK",
+    subtitle: "Nostalgic Games Reimagined",
+    category: "GAME",
+    rarity: "EPIC",
+    icon: "🕹",
+    color: "#eab308",
+    description:
+      "A collection of classic games rebuilt with a modern touch — recreating nostalgic favorites like Tetris and Tower Bloxx with updated visuals, feel, and polish.",
+    tags: ["Game Design", "Tetris", "Tower Bloxx", "Unity", "Retro"],
+    highlight: true,
+  },
+  {
     id: "cilantro",
     title: "CILANTRO HEIST",
     subtitle: "Game Designer & Developer",
@@ -13,9 +40,9 @@ const PROJECTS = [
     rarity: "LEGENDARY",
     icon: "☕",
     color: "#f59e0b",
-    stats: { plays: "60K", redeems: "35K", time: "2 weeks" },
+    stats: { plays: "60K", redeems: "35K", time: "2 weeks", timeLabel: "CAMPAIGN" },
     description:
-      "Built a full universe — a game, original music, comics, and viral reels — in just two weeks. Designed all gameplay systems and led development end-to-end.",
+      "Built a full universe — a game, original music, comics, and viral reels. Ran a two-week launch campaign that hit 60K plays and 35K redeems. Designed all gameplay systems and led development end-to-end.",
     tags: ["Game Design", "Music", "Comics", "Marketing", "Unity"],
     highlight: true,
   },
@@ -247,7 +274,9 @@ export default function ProjectsSection() {
                     </div>
                     <div className="text-center">
                       <div className="text-yellow-400 font-black text-sm">{project.stats.time}</div>
-                      <div className="terminal-text text-xs text-slate-500">DEV TIME</div>
+                      <div className="terminal-text text-xs text-slate-500">
+                        {project.stats.timeLabel ?? "DEV TIME"}
+                      </div>
                     </div>
                   </div>
                 )}
